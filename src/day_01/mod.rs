@@ -1,4 +1,6 @@
 use std::fs;
+#[path = "../../src/utils/mod.rs"] mod utils;
+use utils::read_file;
 
 pub fn day_01_01() -> i32 {
     let file_path = "src/day_01/data.txt";
@@ -6,7 +8,7 @@ pub fn day_01_01() -> i32 {
     let mut max = 0;
     let mut local_max = 0;
 
-    contents = fs::read_to_string(file_path).expect("Should have been able to read the file");
+    contents = read_file(file_path);
 
     for line in contents.lines().into_iter() {
         if line.is_empty() {
