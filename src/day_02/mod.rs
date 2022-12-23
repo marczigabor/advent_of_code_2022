@@ -59,21 +59,16 @@ pub fn day_02_02() -> i32 {
         // Z = win
         selected = "A";
         if v[1].eq("X") {
-
             match v[0] {
                 "A" => selected = "C",
                 "B" => selected = "A",
                 "C" => selected = "B",
                 &_ => todo!()
             }
-
         } else if v[1].eq("Y") {
-            
             selected = v[0];
             point += 3;
-
         } else if v[1].eq("Z"){
-            
             match v[0] {
                 "A" => selected = "B",
                 "B" => selected = "C",
