@@ -1,5 +1,5 @@
 #[path = "../../src/utils/mod.rs"] mod utils;
-use std::collections::{HashSet, HashMap};
+use std::collections::{HashSet};
 
 pub fn day_03_01() -> i32 {
     let file_path = "src/day_03/data.txt";
@@ -50,13 +50,8 @@ pub fn day_03_02() -> i32 {
     let mut sum: i32 = 0;
     let mut lines: Vec<&str> = Vec::new();
 
-    // for _ in 1..3 {
-    //     hashes.push(HashSet::new());
-    // }
-
-
     for line in contents.lines().into_iter() {
-
+        lines.push(line);
 
         if lines.len() == CAPACITY {
             let line1 = lines.iter().min_by_key(|p| p.len()).unwrap();
@@ -77,8 +72,6 @@ pub fn day_03_02() -> i32 {
             }
             lines.clear();
         }
-
-        lines.push(line);
     }
 
 
@@ -130,5 +123,5 @@ pub fn day_03_02() -> i32 {
 
     //     lines.push(line);
     // }
-    sum as i32
+    sum
 }
